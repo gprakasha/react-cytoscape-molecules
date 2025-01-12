@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Molecule Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that fetches compound data from PubChem, visualizes the molecule structure using Cytoscape, and displays the properties of the compound. The app allows the user to input a compound name, and dynamically retrieves and visualizes the atomic structure along with the associated properties like molecular formula, molecular weight, and IUPAC name.
 
-## Available Scripts
+### Features
 
-In the project directory, you can run:
+- Real-time search: As you type the name of a compound, the app will query PubChem for the corresponding compound data.
+- Molecule Visualization: The atoms and bonds of the molecule are displayed graphically using CytoscapeJS.
+- Molecular Properties: Displays properties such as the molecular formula, molecular weight, and IUPAC name.
+- Debounced Search: To improve performance, the search input is debounced, ensuring queries are only made after a brief delay.
 
-### `npm start`
+### Next Steps: Animate the Atoms
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Apply Movement Animation to Atoms:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - The atoms can "float" by periodically changing their positions within a defined range. You can use the cy.animate() method provided by Cytoscape to animate the nodes (atoms) to move smoothly.
 
-### `npm test`
+- Add a Random Floating Animation:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Use the requestAnimationFrame or setInterval method to animate the positions of the atoms in the useEffect hook.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Cytoscape Animation API:
+   - Cytoscape provides a way to animate properties like position, color, size, etc. You can animate the position of atoms to create a floating effect.
